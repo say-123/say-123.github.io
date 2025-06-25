@@ -8,14 +8,16 @@
         /* 기본 설정 */
         body { 
             font-family: sans-serif;
-            margin: 0; 
+            margin: 0;
+            background-color: #f4f4f9; /* 배경색을 약간 추가하여 단조로움 피하기 */
         }
 
-        /* --- 1, 2번 수정: 좌측 상단 헤더 --- */
+        /* --- 1. 좌측 상단 헤더 --- */
         .header {
             position: absolute;
             top: 30px;
             left: 30px;
+            width: calc(100% - 60px); /* 헤더의 너비를 화면 너비에 맞게 조정 */
         }
 
         .header .logo-text {
@@ -25,33 +27,34 @@
         }
 
         .header .logo-line {
-            width: 300px; 
+            width: 100%; /* 부모 요소(.header)의 너비를 꽉 채움 (화면 끝까지) */
             margin-top: 38px;
             margin-left: 0;
             border: none;
-            border-top: 2px solid black; 
+            border-top: 1px solid #ccc; /* 선을 조금 더 얇고 연하게 변경 */
         }
 
-        /* --- 3번 수정: 중앙 컨텐츠 --- */
+        /* --- 2, 3, 6. 중앙 컨텐츠 --- */
         .main-content {
             text-align: center;
-            padding-top: 180px; 
+            padding: 120px 20px 40px 20px; /* 상단 여백 조정 및 좌우 여백 추가 */
         }
         
-        .main-content .sub-heading {
+        .main-content .title-heading {
             color: black;
             font-weight: bold;
-            font-size: 32px; 
-            margin-bottom: 50px;
+            font-size: 64px; /* 기존 32px의 2배 */
+            margin: 0;
         }
 
-        img { 
-            max-width: 500px; 
-            height: auto; 
-            border-radius: 10px; 
+        .main-content .tagline {
+            font-size: 18px;
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 60px; /* 버튼과의 간격 확보 */
         }
         
-        /* --- 4번 수정: 버튼 스타일 --- */
+        /* --- 5. 버튼 크기 동일하게 --- */
         .button {
             display: inline-block;
             padding: 15px 25px;
@@ -62,6 +65,8 @@
             margin: 10px;
             cursor: pointer;
             transition: all 0.2s;
+            width: 220px; /* 버튼의 너비를 명시적으로 지정 */
+            box-sizing: border-box; /* 패딩과 테두리를 너비에 포함시켜 크기를 정확히 맞춤 */
         }
 
         .button-primary {
@@ -81,6 +86,58 @@
         .button-secondary:hover {
             background-color: #f0f0f0; 
         }
+
+        /* --- 7. 하단 탭 메뉴 --- */
+        .tabs-container {
+            max-width: 900px;
+            margin: 80px auto 0 auto; /* 위쪽 여백, auto는 좌우 중앙 정렬 */
+            text-align: left;
+        }
+
+        /* 라디오 버튼은 숨김 (기능만 사용) */
+        .tabs-container input[type="radio"] {
+            display: none;
+        }
+
+        .tab-bar {
+            display: flex;
+            background-color: #000080; /* 남색 배경 */
+            border-radius: 8px;
+        }
+
+        .tab-button {
+            flex: 1; /* 모든 탭이 동일한 너비를 갖도록 함 */
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .tab-button:hover {
+            background-color: #0000cd;
+        }
+
+        .tab-content-wrapper {
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .tab-content {
+            display: none; /* 모든 설명글을 일단 숨김 */
+        }
+        
+        /* 선택된 탭에 연결된 설명글만 보여주는 마법의 코드 */
+        #tab1:checked ~ .tab-content-wrapper #content1,
+        #tab2:checked ~ .tab-content-wrapper #content2,
+        #tab3:checked ~ .tab-content-wrapper #content3,
+        #tab4:checked ~ .tab-content-wrapper #content4 {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -91,19 +148,45 @@
     </div>
 
     <div class="main-content">
-        <div class="sub-heading">sc advisor</div>
+        <div class="title-heading">sc advisor</div>
+        <p class="tagline">kisa 기준 주요 보안 항목 자동 점검 원클릭 도구</p>
 
-        <h1>안녕하세요! 제 웹사이트에 오신 것을 환영합니다.</h1>
-
-        <p>이곳은 GitHub Pages를 이용해 만든 저의 첫 번째 웹페이지입니다.</p>
-        
-        <img src="images/my-picture.png" alt="내 이미지">
-
-        <p>아래 버튼을 클릭하여 필요한 페이지로 이동하세요.</p>
-        
         <div>
             <a href="download.html" class="button button-primary">다운로드</a>
             <a href="guide.html" class="button button-secondary">사용 가이드</a>
+        </div>
+
+        <div class="tabs-container">
+            <input type="radio" id="tab1" name="tabs" checked>
+            <input type="radio" id="tab2" name="tabs">
+            <input type="radio" id="tab3" name="tabs">
+            <input type="radio" id="tab4" name="tabs">
+
+            <nav class="tab-bar">
+                <label for="tab1" class="tab-button">sc advisor 소개</label>
+                <label for="tab2" class="tab-button">서비스 대상</label>
+                <label for="tab3" class="tab-button">서비스 절차</label>
+                <label for="tab4" class="tab-button">유료 버전</label>
+            </nav>
+
+            <div class="tab-content-wrapper">
+                <div class="tab-content" id="content1">
+                    <h3>sc advisor 소개</h3>
+                    <p>이곳에 sc advisor 소개에 대한 설명글이 나옵니다.</p>
+                </div>
+                <div class="tab-content" id="content2">
+                    <h3>서비스 대상</h3>
+                    <p>이곳에 서비스 대상에 대한 설명글이 나옵니다.</p>
+                </div>
+                <div class="tab-content" id="content3">
+                    <h3>서비스 절차</h3>
+                    <p>이곳에 서비스 절차에 대한 설명글이 나옵니다.</p>
+                </div>
+                <div class="tab-content" id="content4">
+                    <h3>유료 버전</h3>
+                    <p>이곳에 유료 버전에 대한 설명글이 나옵니다.</p>
+                </div>
+            </div>
         </div>
     </div>
 
