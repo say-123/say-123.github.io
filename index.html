@@ -3,39 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 첫 웹페이지</title>
+    <title>sc advisor</title>
     <style>
-        /* 페이지를 보기 좋게 꾸미는 CSS 코드입니다 */
-        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-        img { max-width: 500px; height: auto; border-radius: 10px; }
+        /* 기본 설정 */
+        body { 
+            font-family: sans-serif;
+            margin: 0; 
+        }
+
+        /* --- 1, 2번 수정: 좌측 상단 헤더 --- */
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .header .logo-text {
+            color: black;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .header .logo-line {
+            width: 300px; 
+            margin-top: 38px;
+            margin-left: 0;
+            border: none;
+            border-top: 2px solid black; 
+        }
+
+        /* --- 3번 수정: 중앙 컨텐츠 --- */
+        .main-content {
+            text-align: center;
+            padding-top: 180px; 
+        }
+        
+        .main-content .sub-heading {
+            color: black;
+            font-weight: bold;
+            font-size: 32px; 
+            margin-bottom: 50px;
+        }
+
+        img { 
+            max-width: 500px; 
+            height: auto; 
+            border-radius: 10px; 
+        }
+        
+        /* --- 4번 수정: 버튼 스타일 --- */
         .button {
             display: inline-block;
             padding: 15px 25px;
             font-size: 18px;
-            color: white;
-            background-color: #007bff;
-            border: none;
+            font-weight: bold;
             border-radius: 5px;
             text-decoration: none;
             margin: 10px;
             cursor: pointer;
+            transition: all 0.2s;
         }
-        .button:hover { background-color: #0056b3; }
+
+        .button-primary {
+            background-color: #000080; 
+            color: white;
+            border: 2px solid #000080; 
+        }
+        .button-primary:hover {
+            background-color: #0000cd;
+        }
+
+        .button-secondary {
+            background-color: white;
+            color: #000080; 
+            border: 2px solid #000080;
+        }
+        .button-secondary:hover {
+            background-color: #f0f0f0; 
+        }
     </style>
 </head>
 <body>
 
-    <h1>안녕하세요! 제 웹사이트에 오신 것을 환영합니다.</h1>
+    <div class="header">
+        <div class="logo-text">Zero Base</div>
+        <hr class="logo-line">
+    </div>
 
-    <p>이곳은 GitHub Pages를 이용해 만든 저의 첫 번째 웹페이지입니다.</p>
+    <div class="main-content">
+        <div class="sub-heading">sc advisor</div>
 
-    <img src="images/my-picture.png" alt="내 이미지">
+        <h1>안녕하세요! 제 웹사이트에 오신 것을 환영합니다.</h1>
 
-    <p>아래 버튼을 클릭하여 필요한 페이지로 이동하세요.</p>
+        <p>이곳은 GitHub Pages를 이용해 만든 저의 첫 번째 웹페이지입니다.</p>
+        
+        <img src="images/my-picture.png" alt="내 이미지">
 
-    <div>
-        <a href="download.html" class="button">다운로드</a>
-        <a href="guide.html" class="button">사용 가이드</a>
+        <p>아래 버튼을 클릭하여 필요한 페이지로 이동하세요.</p>
+        
+        <div>
+            <a href="download.html" class="button button-primary">다운로드</a>
+            <a href="guide.html" class="button button-secondary">사용 가이드</a>
+        </div>
     </div>
 
 </body>
