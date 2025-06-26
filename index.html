@@ -22,14 +22,14 @@
         .header .logo-text {
             color: black;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 30px;
         }
         .header .logo-line {
             width: 100%;
             margin-top: 38px;
             margin-left: 0;
             border: none;
-            border-top: 1px solid #ccc;
+            border-top: 3px solid black;
         }
 
         /* 중앙 컨텐츠 */
@@ -42,6 +42,7 @@
             font-weight: bold;
             font-size: 64px;
             margin: 0;
+            margin-top: 20;
         }
         .main-content .tagline {
             font-size: 18px;
@@ -131,12 +132,14 @@
             color: #000080;
         }
         .tab-content ul, .tab-content ol {
-            padding-left: 20px; /* 기본 들여쓰기 조정 */
+            list-style-type: none;
+            padding-left: 10px; /* 기본 들여쓰기 조정 */
         }
         .tab-content li {
-            margin-bottom: 15px; /* 각 항목 사이의 세로 여백 */
-            line-height: 1.6;    /* 줄바꿈 시 줄 간격 조정 */
-            color: #333;
+            content: '↳ ';
+            color: #000080;
+            font-weight: bold;
+            margin-right: 8px;
         }
         .tab-content strong { /* 서비스 절차의 소제목 스타일 */
             font-weight: bold;
@@ -214,11 +217,11 @@
                 <div class="tab-content" id="content3">
                     <h3>서비스 절차</h3>
                     <ol>
-                        <li><strong>1. 프로그램 설치 및 실행</strong>- 공식 웹사이트에서 sc advisor 다운로드</li>
-                        <li><strong>2. 보안 점검 시작</strong>- '취약점 검사 시작' 버튼 클릭</li>
-                        <li><strong>3. 결과 확인</strong>- 점수 및 위험도 별로 항목 표시 (안전/경고/위험)</li>
-                        <li><strong>4. 자동 보안 조치 실행</strong>- 취약점 항목 클릭 시 자동으로 조치 적용</li>
-                        <li><strong>5. 보안 완료 및 리포트 제공 [유료 서비스]</strong></li>
+                        <li><strong>프로그램 설치 및 실행</strong>- 공식 웹사이트에서 sc advisor 다운로드</li>
+                        <li><strong>보안 점검 시작</strong>- '취약점 검사 시작' 버튼 클릭</li>
+                        <li><strong>결과 확인</strong>- 점수 및 위험도 별로 항목 표시 (안전/경고/위험)</li>
+                        <li><strong>자동 보안 조치 실행</strong>- 취약점 항목 클릭 시 자동으로 조치 적용</li>
+                        <li><strong>보안 완료 및 리포트 제공 [유료 서비스]</strong></li>
                     </ol>
                 </div>
                 <div class="tab-content" id="content4">
