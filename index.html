@@ -47,13 +47,15 @@
         .main-content .tagline {
             font-size: 18px;
             color: #555;
-            margin-top: 15px;
-            margin-bottom: 60px;
+            /* sc advisor와 tagline 사이 여백 (2/5) */
+            margin-top: 40px; 
+            /* tagline과 버튼 그룹 사이 여백 (3/5) */
+            margin-bottom: 60px; 
         }
         
         /* 버튼 그룹 (다운로드, 사용가이드) */
         .button-group {
-            margin-top: 114px; /* 버튼 그룹 위쪽 여백 (3cm) */
+            margin-top: 0; /* tagline의 margin-bottom으로 간격 제어 */
         }
 
         /* 버튼 공통 스타일 */
@@ -76,7 +78,7 @@
             border: 2px solid #000080; 
         }
         .button-primary:hover {
-            background-color: #0000cd;
+            background-color: #000066; /* 더 어두운 남색으로 변경 */
         }
         .button-secondary {
             background-color: white;
@@ -89,8 +91,8 @@
 
         /* 하단 탭 메뉴 */
         .tabs-container {
-            max-width: 900px;
-            margin: 80px auto 0 auto;
+            /* 양 옆에 2cm(약 76px) 여백을 두도록 수정 */
+            margin: 80px 76px 0 76px;
             text-align: left;
         }
         .tabs-container input[type="radio"] {
@@ -161,32 +163,30 @@
         }
 
         /* '서비스 대상' 탭 스타일 */
-        /* 상위 목록 (남색 동그라미) */
         #content2 > ul {
             list-style-type: disc;
             padding-left: 20px;
         }
         #content2 > ul > li {
             padding-left: 5px;
-            margin-bottom: 15px; /* 세 문장 밑에 여백 추가 */
+            margin-bottom: 15px;
         }
         #content2 > ul > li::marker {
-            color: #000080; /* 남색 동그라미 기호 */
+            color: #000080;
         }
-        /* 하위 목록 (ㄴ자 화살표) */
         #content2 > ul > li > ul {
-            list-style-type: none; /* 하위 목록은 기본 기호 제거 */
+            list-style-type: none;
             padding-left: 15px;
-            margin-top: 10px; /* 상위 항목과 간격 */
+            margin-top: 10px;
         }
         #content2 > ul > li > ul > li::before {
-            content: '↳ ';        /* 'ㄴ'자 화살표를 직접 생성 */
+            content: '↳ ';
             font-weight: bold;
             color: #000080;
             margin-right: 8px;
         }
         #content2 > ul > li > ul > li {
-            margin-bottom: 0; /* 하위 항목은 아래 여백 제거 */
+            margin-bottom: 0;
         }
 
         /* '서비스 절차' 탭 스타일 */
