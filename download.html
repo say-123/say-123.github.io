@@ -2,11 +2,179 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>다운로드</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sc advisor 다운로드</title>
+    <style>
+        /* --- index.html에서 가져온 헤더 스타일 --- */
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: calc(100% - 60px);
+        }
+        .header .logo-text {
+            color: black;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .header .logo-line {
+            width: 100%;
+            margin-top: 38px;
+            margin-left: 0;
+            border: none;
+            border-top: 2px solid black;
+        }
+        /* --- 여기까지 헤더 스타일 --- */
+
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        .download-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            /* 헤더와 겹치지 않도록 상단 여백 및 중앙 정렬 조정 */
+            margin: 150px auto 0 auto; 
+        }
+        h1 {
+            color: #000080;
+            font-size: 36px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .sub-title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .download-button {
+            display: inline-block;
+            background-color: #000080;
+            color: white;
+            padding: 20px 40px;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+            margin-bottom: 40px;
+        }
+        .download-button:hover {
+            background-color: #00004d;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            gap: 30px; /* 두 섹션 사이의 간격 */
+            margin-bottom: 40px;
+        }
+        .info-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            width: 50%;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            font-size: 18px;
+            border-bottom: 2px solid #000080;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .info-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #555;
+        }
+        .info-box li {
+            margin-bottom: 10px;
+        }
+        .info-box li strong {
+            color: #333;
+        }
+        .footer-links {
+            margin-top: 20px;
+        }
+        .footer-links a {
+            color: #000080;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* 모바일 화면 대응 */
+        @media (max-width: 600px) {
+            .info-section {
+                flex-direction: column;
+            }
+            .info-box {
+                width: 100%;
+            }
+            .download-container {
+                margin-top: 120px; /* 모바일에서는 헤더와의 간격을 조금 줄임 */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>다운로드 페이지</h1>
-    <p>이곳에서 파일을 다운로드할 수 있습니다.</p>
-    <a href="index.html">메인 페이지로 돌아가기</a>
+
+    <div class="header">
+        <div class="logo-text">Zero Base</div>
+        <hr class="logo-line">
+    </div>
+
+    <div class="download-container">
+        <h1>sc advisor 다운로드</h1>
+        <p class="sub-title">안전한 PC 환경을 위한 원클릭 보안 점검 도구</p>
+
+        <a href="#" class="download-button">Windows 버전 다운로드 (v1.0.1)</a>
+        
+        <div class="info-section">
+            <div class="info-box">
+                <h3>버전 정보</h3>
+                <ul>
+                    <li><strong>최신 버전:</strong> 1.0.1</li>
+                    <li><strong>업데이트 날짜:</strong> 2025년 6월 26일</li>
+                    <li><strong>파일 크기:</strong> 15.4 MB</li>
+                    <li><strong>변경 사항:</strong>
+                        <ul>
+                            <li>- UI/UX 개선</li>
+                            <li>- 점검 속도 최적화</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <h3>시스템 요구사항</h3>
+                <ul>
+                    <li><strong>운영체제:</strong></li>
+                    <li>- Windows 10 (64bit)</li>
+                    <li>- Windows 11 (64bit)</li>
+                    <li><strong>권장 사양:</strong></li>
+                    <li>- RAM 4GB 이상</li>
+                    <li>- HDD 100MB 이상 여유 공간</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">메인으로 돌아가기</a>
+            <a href="guide.html">설치 및 사용 가이드</a>
+        </div>
+    </div>
 </body>
 </html>
