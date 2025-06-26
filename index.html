@@ -29,7 +29,7 @@
             margin-top: 38px;
             margin-left: 0;
             border: none;
-            border-top: 3px solid black;
+            border-top: 2px solid black;
         }
 
         /* 중앙 컨텐츠 */
@@ -42,7 +42,7 @@
             font-weight: bold;
             font-size: 64px;
             margin: 0;
-            margin-top: 20;
+            margin-top: 114px; /* sc advisor 글자 위치 조정 */
         }
         .main-content .tagline {
             font-size: 18px;
@@ -125,21 +125,11 @@
             display: block;
         }
 
-        /* --- (1), (2), (3), (4)번 수정: 탭 설명글 스타일 --- */
+        /* 탭 설명글 공통 스타일 */
         .tab-content h3 {
             margin-top: 0;
             font-size: 22px;
             color: #000080;
-        }
-        .tab-content ul, .tab-content ol {
-            list-style-type: none;
-            padding-left: 10px; /* 기본 들여쓰기 조정 */
-        }
-        .tab-content li {
-            content: '↳ ';
-            color: #000080;
-            font-weight: bold;
-            margin-right: 8px;
         }
         .tab-content strong { /* 서비스 절차의 소제목 스타일 */
             font-weight: bold;
@@ -151,7 +141,57 @@
             text-align: center;
             margin-top: 30px;
         }
-        /* --- 여기까지 --- */
+
+        /* 'sc advisor 소개' 탭 스타일 */
+        #content1 ul {
+            list-style-type: disc; /* '채워진 동그라미' 기호 사용 */
+            padding-left: 20px;
+        }
+        #content1 li {
+            color: black;          /* 글자색 검은색 */
+            margin-bottom: 12px;   /* 문장 사이 여백 */
+        }
+        #content1 li::marker {
+            color: #000080;       /* 기호 색상을 남색으로 변경 */
+        }
+
+        /* '서비스 대상' 탭 스타일 */
+        #content2 ul {
+            list-style-type: none; /* 여기선 기본 기호를 사용하지 않음 */
+            padding-left: 10px;
+        }
+        #content2 li {
+            margin-bottom: 12px;
+        }
+        #content2 li::before {
+            content: '↳ ';        /* 'ㄴ'자 화살표를 직접 생성 */
+            font-weight: bold;
+            color: #000080;       /* 화살표는 남색 */
+            margin-right: 8px;
+        }
+
+        /* '서비스 절차' 탭 스타일 */
+        #content3 ol {
+            list-style-type: decimal; /* '1, 2, 3...' 숫자 기호 사용 */
+            padding-left: 20px;
+        }
+        #content3 li {
+            margin-bottom: 12px;
+            padding-left: 5px; /* 숫자와 글자 사이 간격 */
+        }
+
+        /* '유료 기능' 탭 스타일 */
+        #content4 ul {
+            list-style-type: disc; /* '채워진 동그라미' 기호 사용 */
+            padding-left: 20px;
+        }
+        #content4 li {
+            color: black;          /* 글자색 검은색 */
+            margin-bottom: 12px;
+        }
+        #content4 li::marker {
+            color: black;          /* 기호 색상도 검은색으로 변경 */
+        }
     </style>
 </head>
 <body>
